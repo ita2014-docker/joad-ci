@@ -22,9 +22,7 @@ done
 unzip -p /usr/share/jenkins/jenkins.war META-INF/MANIFEST.MF \
     | sed "/^\s*$/q" >META-INF/MANIFEST.MF
 
-zip -d /usr/share/jenkins/jenkins.war META-INF/JENKINS.SF
-zip -d /usr/share/jenkins/jenkins.war META-INF/JENKINS.RSA
-zip -g /usr/share/jenkins/jenkins.war META-INF/MANIFEST.MF
-zip -g /usr/share/jenkins/jenkins.war WEB-INF/plugins/*
+zip -d /usr/share/jenkins/jenkins.war META-INF/JENKINS.SF META-INF/JENKINS.RSA
+zip -g /usr/share/jenkins/jenkins.war META-INF/MANIFEST.MF WEB-INF/plugins/*
 
 rm -rf /tmp/joad-ci
