@@ -13,8 +13,7 @@ for plugin in \
     ssh-credentials \
     git-client \
     github \
-    github-api \
-    docker-build-step
+    github-api
 do
     curl -L https://updates.jenkins-ci.org/latest/${plugin}.hpi -o WEB-INF/plugins/${plugin}.hpi
 done
