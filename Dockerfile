@@ -1,9 +1,11 @@
 FROM jenkins:1.592
 
-USER root
+ENV DOCKER_VERSION 1.4.1
 
-COPY install-plugins.sh /tmp/install-plugins.sh
-RUN sh /tmp/install-plugins.sh && rm -f /tmp/install-plugins.sh
-RUN apt-get update && apt-get install -y docker.io --no-install-recommends && rm -rf /var/lib/apt/lists/*
+USER root
+RUN curl -L https://get.docker.io/builds/Linux/x86_64/docker-${DOCKER_VERSION} -o /usr/local/bin/docker && \
+    chmod +x /usr/local/bin/docker
 
 USER jenkins
+COPY plugins.txt /plugins.txt
+RUN /usr/local/bin/plugins.sh /plugins.txt

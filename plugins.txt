@@ -1,0 +1,9 @@
+git:2.3.3
+matrix-project:1.4
+git-client:1.15.0
+credentials:1.20
+mailer:1.11
+scm-api:0.2
+ssh-credentials:1.10
+github:1.10
+github-api:1.42
